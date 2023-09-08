@@ -1,5 +1,5 @@
-# Notion Formulas 2.0 Changelog
+# Notion Formulas Changelog
 
-## [Added Notion Formulas 2.0] - YYYY-MM-DD
+## [Initial Version] - 2022-09-05
 
-Initial version code
+- Added Notion Formulas
