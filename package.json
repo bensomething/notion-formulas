@@ -12,20 +12,20 @@
   "commands": [
     {
       "name": "documentation",
-      "title": "Search Docs",
-      "description": "Documentation for Notion's new formulas.",
+      "title": "Search Documentation",
+      "description": "Search functions, operators, and more.",
       "mode": "view"
     },
     {
       "name": "examples",
       "title": "Search Examples",
-      "description": "Access your own Notion formulas.",
+      "description": "Search your saved formula examples.",
       "mode": "view"
     },
     {
-      "name": "createExample",
+      "name": "create",
       "title": "Create Example",
-      "description": "Create a new example formula.",
+      "description": "Create a new formula example snippet.",
       "mode": "view"
     }
   ],
