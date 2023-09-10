@@ -33,11 +33,17 @@ export default function TypeDropdown(props: {
               key={type}
               value={type}
               title={type}
-              icon={{ source:`types/${type.toLowerCase()}.svg`, tintColor: { light: "#aaa", dark: "#888", adjustContrast:  false, }, }}
+              icon={{ source:`types/${type.toLowerCase().replace(/ /g, "-")}.svg`, tintColor: { light: "#aaa", dark: "#888", adjustContrast:  false, }, }}
             />
           );
         })}
       </DropdownComponent.Section>
+      {/* <DropdownComponent.Item
+        key="two"
+        value="two"
+        title="New in 2.0"
+        icon={{ source: "types/new-in-2.0.svg", tintColor: { light: "#aaa", dark: "#888", adjustContrast:  false, }, }}
+      /> */}
     </DropdownComponent>
   );
 }

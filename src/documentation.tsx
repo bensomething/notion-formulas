@@ -1,9 +1,9 @@
-import { Action, ActionPanel, List, Detail, Color, Cache } from "@raycast/api";
+import { Action, ActionPanel, List, Detail, Color } from "@raycast/api";
 import { useMemo, useState, useEffect } from "react";
 import axios from 'axios';
 import groupBy from "lodash.groupby";
 import TypeDropdown from "./components/type_dropdown";
-const LOCAL_FORMULAS = require('./data/formulas.json');
+import LocalFormulas from './data/formulas.json';
 /* import FormulaDetail from "./components/detail"; */
 
 interface Formula {
@@ -19,7 +19,7 @@ interface Formula {
   other: string;
   examples: string;
   exampleBasic: string;
-  link: string;
+  linkNotion: string;
   new: string;
 }
 
@@ -30,8 +30,8 @@ export default function SearchFormulas() {
   const [isInitialLoad, setIsInitialLoad] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [showingDetail, setShowingDetail] = useState(true);
+  /* const [searchText, setSearchText] = useState(""); */
   const [type, setType] = useState<string>("all");
-  console.log(process.env.NODE_ENV);
   useEffect(() => {
     const fetchData = async () => {
       setIsInitialLoad(true);
@@ -41,7 +41,7 @@ export default function SearchFormulas() {
         let data;
         
         if (process.env.NODE_ENV === 'development') {
-          data = LOCAL_FORMULAS
+          data = LocalFormulas
         } else {
           const response = await axios.get('https://raw.githubusercontent.com/bensomething/formulas/main/formulas.json');
           data = response.data;
@@ -60,13 +60,12 @@ export default function SearchFormulas() {
     fetchData();
   }, []);
 
-  const listing = useMemo(() => {
-    return type !== "all"
-      ? formulas.filter((p) => p.type.includes(type))
-      : formulas;
-  }, [type, formulas]);
+  const groupedListing = useMemo(() => {
+    let list = type !== "all" ? formulas.filter((p) => p.type.includes(type)) : formulas;
+    return groupBy(list, type !== "all" ? "category" : "type");
+}, [type, formulas]);
 
-  if (listing.length === 0 && !isInitialLoad) {
+  if (Object.keys(groupedListing).length === 0 && !isInitialLoad) {
     return (
       <List isLoading={isLoading}>
         <List.Item
@@ -80,22 +79,24 @@ export default function SearchFormulas() {
     <List
       isLoading={isLoading || isInitialLoad}
       isShowingDetail={showingDetail}
-      searchBarPlaceholder="Search formula components"
+      searchBarPlaceholder={`Search ${type === 'all' ? 'formulas' : type.toLowerCase() }`}
       searchBarAccessory={
         <TypeDropdown type="grid" command="Formulas" onSelectType={setType} />
       }
+      /* onSearchTextChange={setSearchText} */
     >
-      {Object.entries(groupBy(listing, "type")).map(
-        ([type, formulaList]) => {
+      {Object.entries(groupedListing).map(
+    ([key, formulaList]) => {
           return (
-            <List.Section title={type} key={type}>
+            <List.Section title={key} /* subtitle={`${searchText ? '' : ` ${formulaList.length}`}`} */ key={key}>
               {formulaList.map((formula) => {
                 return (
                   <List.Item
                     key={formula.name}
-                    icon={{ source: formula.iconReturns, tintColor: { light: "#aaa", dark: "#888" }, }}
+                    icon={formula.name == "false" ? { source: "false.svg", tintColor: { light: "#aaa", dark: "#888" }, } : { source: formula.iconReturns, tintColor: { light: "#aaa", dark: "#888" }, }}
                     title={formula.name}
-                    keywords={[formula.name, formula.other]}
+                    keywords={[formula.name, formula.other, formula.category, key]}
+                    /* quickLook={{ path: `${formula.name}.txt`, name: `${formula.name}` }} */
                     detail={
                       <List.Item.Detail 
                       markdown={"## " + formula.name + "\n" + formula.description + (formula.examples ? "\n```js\n" + formula.examples + "\n```" : "")}
@@ -125,7 +126,7 @@ export default function SearchFormulas() {
                           <Detail.Metadata.Separator />
                           <Detail.Metadata.Link 
                             title="More" 
-                            target={`https://bensomething.notion.site/${formula.link}`} 
+                            target={`https://bensomething.notion.site/${formula.linkNotion}`} 
                             text={formula.type == "Operators" && formula.other ? formula.other : formula.name} 
                           />
                         </Detail.Metadata>
@@ -134,9 +135,14 @@ export default function SearchFormulas() {
                     }
                     actions={
                       <ActionPanel>
-                        <Action.Paste icon="paste.svg" title="Paste Example" content={formula.exampleBasic} />
-                        {/* <Action.Push icon="detail.svg" title="Open Detail" target={<FormulaDetail id={formula.id} />} /> */}
-                        <Action.OpenInBrowser icon="browser.svg" title={`More in Browser`} /* shortcut={{ modifiers: ["cmd"], key: "o" }} */ url={`https://bensomething.notion.site/${formula.link}`} />
+                        { formula.exampleBasic && (
+                          <Action.Paste icon="paste.svg" title="Paste Example" content={formula.exampleBasic} />
+                        )}
+                        {/* <Action.ToggleQuickLook shortcut={{ modifiers: ["cmd"], key: "y" }} />
+                         <Action.Push icon="detail.svg" title="Open Detail" target={<FormulaDetail id={formula.id} />} /> */}
+                        { formula.linkNotion && (
+                          <Action.OpenInBrowser icon="browser.svg" title={`More in Browser`} /* shortcut={{ modifiers: ["cmd"], key: "o" }} */ url={`https://bensomething.notion.site/${formula.linkNotion}`} />
+                        )}
                       </ActionPanel>
                     }
                     accessories={[

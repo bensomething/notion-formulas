@@ -11,12 +11,44 @@
   ],
   "commands": [
     {
-      "name": "index",
-      "title": "Formulas 2.0",
-      "description": "Documentation and examples for Notion's new formulas.",
+      "name": "documentation",
+      "title": "Search Docs",
+      "description": "Documentation for Notion's new formulas.",
+      "mode": "view"
+    },
+    {
+      "name": "examples",
+      "title": "Search Examples",
+      "description": "Access your own Notion formulas.",
+      "mode": "view"
+    },
+    {
+      "name": "createExample",
+      "title": "Create Example",
+      "description": "Create a new example formula.",
       "mode": "view"
     }
   ],
+  "preferences": [
+    {
+      "name": "notation",
+      "title": "Notation Preference",
+      "description": "Used for basic examples when pasted.",
+      "type": "dropdown",
+      "default": "regular",
+      "data": [
+        {
+          "title":"Regular: length(\"Notion\")",
+          "value":"regular"
+        },
+        {
+          "title":"Dot: \"Notion\".length()",
+          "value":"dot"
+        }
+      ],
+      "required": true
+    }
+  ], 
   "dependencies": {
     "@raycast/api": "^1.47.2",
     "axios": "^1.3.1",
