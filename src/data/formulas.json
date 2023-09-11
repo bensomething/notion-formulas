@@ -12,6 +12,7 @@
     "other": "? :",
     "examples": "if(true, 1, 2)\n/* => 1 */\n```\n\n```js\ntrue.if(1, 2)\n/* => 1 */",
     "exampleBasic": "if(true, 1, 2)",
+    "exampleBasicDot": "true.if(1, 2)",
     "linkNotion": "e3fcf03c5c98451181958ba7eb58214f",
     "new": ""
   },
@@ -28,6 +29,7 @@
     "other": "",
     "examples": "ifs(true, 1, true, 2, 3)\n/* => 1 */\n```\n\n```js\ntrue.ifs(1, true, 2, 3)\n/* => 1 */",
     "exampleBasic": "ifs(true, 1, true, 2, 3)",
+    "exampleBasicDot": "",
     "linkNotion": "230a126848784fe6845f73a64f1ea4f0",
     "new": "2.0"
   },
@@ -44,6 +46,7 @@
     "other": "",
     "examples": "and(true, true, true)\n/* => true */\n```\n\n```js\ntrue.and(true, true)\n/* => true */",
     "exampleBasic": "and(true, true, true)",
+    "exampleBasicDot": "",
     "linkNotion": "05895e0e81004fc68b74e92063e34034",
     "new": ""
   },
@@ -60,6 +63,7 @@
     "other": "",
     "examples": "or(true, false, false)\n/* => true */\n```\n\n```js\ntrue.or(false, false)\n/* => true */",
     "exampleBasic": "or(true, false, false)",
+    "exampleBasicDot": "",
     "linkNotion": "2dda9a0b9f464d68804b7eb88581731f",
     "new": ""
   },
@@ -76,6 +80,7 @@
     "other": "",
     "examples": "empty(0)\n/* => true */\n```\n\n```js\n0.empty()\n/* => true */",
     "exampleBasic": "empty(0)",
+    "exampleBasicDot": "",
     "linkNotion": "24fe54f9484140a28a9ff7e25dd3e1ed",
     "new": ""
   },
@@ -92,11 +97,12 @@
     "other": "",
     "examples": "length(\"hello\")\n/* => 5 */\n```\n\n```js\n\"hello\".length()\n/* => 5 */",
     "exampleBasic": "length(\"hello\")",
+    "exampleBasicDot": "",
     "linkNotion": "bddea8a85a3444699ea656af42e0c53c",
     "new": ""
   },
   {
-    "name": "substring ",
+    "name": "substring",
     "id": 7,
     "type": "Functions",
     "description": "Returns the substring of the text from the start index (inclusive) to the end index (optional and exclusive).",
@@ -108,6 +114,7 @@
     "other": "",
     "examples": "substring(\"Notion\", 0, 3)\n/* => \"Not */\n```\n\n```js\n\"Not\".substring(0, 3)\n/* => \"Not\" */",
     "exampleBasic": "substring(\"Notion\", 0, 3)",
+    "exampleBasicDot": "",
     "linkNotion": "623844f5ee7147228dcc94ea68eefde9",
     "new": "2.0"
   },
@@ -124,6 +131,7 @@
     "other": "",
     "examples": "contains(\"Notion\", \"ot\")\n/* => true */",
     "exampleBasic": "contains(\"Notion\", \"ot\")",
+    "exampleBasicDot": "",
     "linkNotion": "8f16ae1e5ed9474c8311deb43ffe6834",
     "new": ""
   },
@@ -140,6 +148,7 @@
     "other": "",
     "examples": "test(\"Notion\", \"Not\")\n/* => true */",
     "exampleBasic": "test(\"Notion\", \"Not\")",
+    "exampleBasicDot": "",
     "linkNotion": "fd12107cd2d64438aba853b462348a5a",
     "new": ""
   },
@@ -156,6 +165,7 @@
     "other": "",
     "examples": "match(\"Notion Notion\", \"Not\")\n/* => [\"Not\", \"Not\"] */",
     "exampleBasic": "match(\"Notion Notion\", \"Not\")",
+    "exampleBasicDot": "",
     "linkNotion": "2e065854c9634dbe8e30d251db91d341",
     "new": "2.0"
   },
@@ -172,6 +182,7 @@
     "other": "",
     "examples": "replace(\"Notion Notion\", \"N\", \"M\")\n/* => \"Motion Notion\" */",
     "exampleBasic": "replace(\"Notion Notion\", \"N\", \"M\")",
+    "exampleBasicDot": "",
     "linkNotion": "543a48a3c2b94bafa2671a6438a556ff",
     "new": ""
   },
@@ -188,6 +199,7 @@
     "other": "",
     "examples": "replaceAll(\"Notion Notion\", \"N\", \"M\")\n/* => \"Motion Motion\" */",
     "exampleBasic": "replaceAll(\"Notion Notion\", \"N\", \"M\")",
+    "exampleBasicDot": "",
     "linkNotion": "8632d1840e974979b93868bd133b4a68",
     "new": ""
   },
@@ -204,6 +216,7 @@
     "other": "",
     "examples": "lower(\"NOTION\")\n/* => \"notion\" */",
     "exampleBasic": "lower(\"NOTION\")",
+    "exampleBasicDot": "",
     "linkNotion": "5fb6c76c57434b20924d39cc958ab54b",
     "new": "2.0"
   },
@@ -220,6 +233,7 @@
     "other": "",
     "examples": "upper(\"notion\")\n/* => \"NOTION\" */",
     "exampleBasic": "upper(\"notion\")",
+    "exampleBasicDot": "",
     "linkNotion": "b4d24f66fbb649b99c3cc08a99555a88",
     "new": "2.0"
   },
@@ -236,6 +250,7 @@
     "other": "",
     "examples": "repeat(\"0\", 4)\n/* => \"0000\" */",
     "exampleBasic": "repeat(\"0\", 4)",
+    "exampleBasicDot": "",
     "linkNotion": "bcb112733d3b433d8356229806f8f426",
     "new": "2.0"
   },
@@ -252,6 +267,7 @@
     "other": "",
     "examples": "link(\"Notion\", \"https://notion.so\")\n/* => \"Notion\" */",
     "exampleBasic": "link(\"Notion\", \"https://notion.so\")",
+    "exampleBasicDot": "",
     "linkNotion": "833d4df39c2d43b398ba6ecdc73aa327",
     "new": "2.0"
   },
@@ -268,6 +284,7 @@
     "other": "",
     "examples": "style(\"Notion\", \"b\", \"u\")\n/* => \"Notion\" */",
     "exampleBasic": "style(\"Notion\", \"b\", \"u\")",
+    "exampleBasicDot": "",
     "linkNotion": "2be5c4a4a2cf48d398c8579065a62ca1",
     "new": "2.0"
   },
@@ -284,6 +301,7 @@
     "other": "",
     "examples": "unstyle(\"Text\")\n/* => \"Text\" */",
     "exampleBasic": "unstyle(\"Text\")",
+    "exampleBasicDot": "",
     "linkNotion": "ab9cfa1799064b9ea7bb9763390b7b7b",
     "new": "2.0"
   },
@@ -300,6 +318,7 @@
     "other": "",
     "examples": "format(1234)\n/* => \"1234\" */",
     "exampleBasic": "format(1234)",
+    "exampleBasicDot": "",
     "linkNotion": "9e30576121b2454bb5100b64df265138",
     "new": ""
   },
@@ -316,6 +335,7 @@
     "other": "+",
     "examples": "add(5, 10)\n/* => 15 */\n```\n\n```js\n5.add(10)\n/* => 15 */",
     "exampleBasic": "add(5, 10)",
+    "exampleBasicDot": "",
     "linkNotion": "b3c88538fc204d848f3aa2a433606257",
     "new": ""
   },
@@ -332,6 +352,7 @@
     "other": "-",
     "examples": "subtract(5, 10)\n/* => -5 */",
     "exampleBasic": "subtract(5, 10)",
+    "exampleBasicDot": "",
     "linkNotion": "3b068e8814a04cfa887d8f4029c29f50",
     "new": ""
   },
@@ -348,6 +369,7 @@
     "other": "*",
     "examples": "multiply(5, 10)\n/* => 50 */",
     "exampleBasic": "multiply(5, 10)",
+    "exampleBasicDot": "",
     "linkNotion": "232fda48c6e34224b2c027ade4b5772c",
     "new": ""
   },
@@ -364,6 +386,7 @@
     "other": "%",
     "examples": "mod(5, 10)\n/* => 5 */",
     "exampleBasic": "mod(5, 10)",
+    "exampleBasicDot": "",
     "linkNotion": "8d83fb5f44d744b5b4a045a3ac502961",
     "new": ""
   },
@@ -380,6 +403,7 @@
     "other": "^",
     "examples": "pow(5, 10)\n/* => 9765625 */",
     "exampleBasic": "pow(5, 10)",
+    "exampleBasicDot": "",
     "linkNotion": "a7e3772c2e714b27aa7c8391b32c8adf",
     "new": ""
   },
@@ -396,6 +420,7 @@
     "other": "/",
     "examples": "divide(5, 10)\n/* => 0.5 */",
     "exampleBasic": "divide(5, 10)",
+    "exampleBasicDot": "",
     "linkNotion": "fd20f9547ba841e89d11eded7b9afeb0",
     "new": ""
   },
@@ -412,6 +437,7 @@
     "other": "",
     "examples": "min(1, 2, 3)\n/* => 1 */",
     "exampleBasic": "min(1, 2, 3)",
+    "exampleBasicDot": "",
     "linkNotion": "900498823bbe4284bd8f88d35b2b4e0e",
     "new": ""
   },
@@ -428,6 +454,7 @@
     "other": "",
     "examples": "max(1, 2, 3)\n/* => 3 */",
     "exampleBasic": "max(1, 2, 3)",
+    "exampleBasicDot": "",
     "linkNotion": "cf2d50a499ae49b69df36670c3fb4da6",
     "new": ""
   },
@@ -444,6 +471,7 @@
     "other": "",
     "examples": "sum(1, 2, 3)\n/* => 6 */",
     "exampleBasic": "sum(1, 2, 3)",
+    "exampleBasicDot": "",
     "linkNotion": "336d5549bfbf4cf5bfb2e465bdeeda4a",
     "new": "2.0"
   },
@@ -460,6 +488,7 @@
     "other": "",
     "examples": "abs(10)\n/* => 10 */\n```\n\n```js\n10.abs()/* => 10 */",
     "exampleBasic": "abs(10)",
+    "exampleBasicDot": "",
     "linkNotion": "d1be55ffac08417491fab6bc6efab915",
     "new": ""
   },
@@ -476,6 +505,7 @@
     "other": "",
     "examples": "round(0.4)\n/* => 0 */",
     "exampleBasic": "round(0.4)",
+    "exampleBasicDot": "",
     "linkNotion": "012a4b94127a49529c3ff196b28d16bf",
     "new": ""
   },
@@ -492,6 +522,7 @@
     "other": "",
     "examples": "ceil(0.4)\n/* => 1 */",
     "exampleBasic": "ceil(0.4)",
+    "exampleBasicDot": "",
     "linkNotion": "922a44dc59fe42c89eb349a3c9f2445d",
     "new": ""
   },
@@ -508,6 +539,7 @@
     "other": "",
     "examples": "floor(0.4)\n/* => 0 */",
     "exampleBasic": "floor(0.4)",
+    "exampleBasicDot": "",
     "linkNotion": "0f9980283de8410aa80bb2f7bfe05fb0",
     "new": ""
   },
@@ -524,6 +556,7 @@
     "other": "",
     "examples": "sqrt(4)\n/* => 2 */",
     "exampleBasic": "sqrt(4)",
+    "exampleBasicDot": "",
     "linkNotion": "2b0633b2227f4f8eb43270e74fecf3a3",
     "new": ""
   },
@@ -540,6 +573,7 @@
     "other": "",
     "examples": "cbrt(9)\n/* => 2.080083823051904 */",
     "exampleBasic": "cbrt(9)",
+    "exampleBasicDot": "",
     "linkNotion": "00bb95d63d414fbaabb4aad0f389315f",
     "new": ""
   },
@@ -556,6 +590,7 @@
     "other": "",
     "examples": "exp(1)\n/* => 2.718281828459045 */",
     "exampleBasic": "exp(1)",
+    "exampleBasicDot": "",
     "linkNotion": "cc8037df64a54da7a1f3dc7d632522b2",
     "new": ""
   },
@@ -572,6 +607,7 @@
     "other": "",
     "examples": "ln(2.718281828459045)\n/* => 1 */",
     "exampleBasic": "ln(2.718281828459045)",
+    "exampleBasicDot": "",
     "linkNotion": "305e626c021f4b8aa1297f40839ad93f",
     "new": ""
   },
@@ -588,6 +624,7 @@
     "other": "",
     "examples": "log10(10)\n/* => 1 */",
     "exampleBasic": "log10(10)",
+    "exampleBasicDot": "",
     "linkNotion": "50dce63d4cef4f4e92dee1210fef090b",
     "new": ""
   },
@@ -604,6 +641,7 @@
     "other": "",
     "examples": "log2(4)\n/* => 2 */",
     "exampleBasic": "log2(4)",
+    "exampleBasicDot": "",
     "linkNotion": "5abbdc36d93542929c700fb09d3b266e",
     "new": ""
   },
@@ -620,6 +658,7 @@
     "other": "",
     "examples": "sign(-10)\n/* => -1 */",
     "exampleBasic": "sign(-10)",
+    "exampleBasicDot": "",
     "linkNotion": "38cae13c7fa441aa8979c907b00a6335",
     "new": ""
   },
@@ -636,6 +675,7 @@
     "other": "",
     "examples": "pi()\n/* => 3.141592653589793 */",
     "exampleBasic": "pi()",
+    "exampleBasicDot": "",
     "linkNotion": "b61d9e38cc654321bfa223b8c8b5714a",
     "new": ""
   },
@@ -652,6 +692,7 @@
     "other": "",
     "examples": "e()\n/* => 2.718281828459045 */",
     "exampleBasic": "e()",
+    "exampleBasicDot": "",
     "linkNotion": "313a14b769284b09894f7e9095405ff8",
     "new": ""
   },
@@ -668,6 +709,7 @@
     "other": "",
     "examples": "toNumber(\"2\")\n/* => 2 */",
     "exampleBasic": "toNumber(\"2\")",
+    "exampleBasicDot": "",
     "linkNotion": "176ffb3a0a444e6cbf48b06788024884",
     "new": ""
   },
@@ -684,6 +726,7 @@
     "other": "",
     "examples": "now()\n/* => September 7, 2023 10:00 AM */",
     "exampleBasic": "now()",
+    "exampleBasicDot": "",
     "linkNotion": "907a37d8916e4bb79fa7fad3a2e2c615",
     "new": ""
   },
@@ -700,6 +743,7 @@
     "other": "",
     "examples": "minute(parseDate(\"2023-07-10T17:35Z\"))\n/* => 35 */",
     "exampleBasic": "minute(parseDate(\"2023-07-10T17:35Z\"))",
+    "exampleBasicDot": "",
     "linkNotion": "29608f075a6744be80926be0b99077f3",
     "new": ""
   },
@@ -716,6 +760,7 @@
     "other": "",
     "examples": "hour(parseDate(\"2023-07-10T17:35Z\"))\n/* => 18 */",
     "exampleBasic": "hour(parseDate(\"2023-07-10T17:35Z\"))",
+    "exampleBasicDot": "",
     "linkNotion": "355815d359aa4d05b7251f075fb0fc83",
     "new": ""
   },
@@ -732,6 +777,7 @@
     "other": "",
     "examples": "day(parseDate(\"2023-07-10T17:35Z\"))\n/* => 1 */",
     "exampleBasic": "day(parseDate(\"2023-07-10T17:35Z\"))",
+    "exampleBasicDot": "",
     "linkNotion": "6df0a19a5d684e2184612afde4f99f84",
     "new": ""
   },
@@ -748,6 +794,7 @@
     "other": "",
     "examples": "date(parseDate(\"2023-07-10T17:35Z\"))\n/* => 10 */",
     "exampleBasic": "date(parseDate(\"2023-07-10T17:35Z\"))",
+    "exampleBasicDot": "",
     "linkNotion": "98e3f3b9d69445b19c740ed5dfeab1e0",
     "new": ""
   },
@@ -764,6 +811,7 @@
     "other": "",
     "examples": "week(parseDate(\"2023-01-02\"))\n/* => 1 */",
     "exampleBasic": "week(parseDate(\"2023-01-02\"))",
+    "exampleBasicDot": "",
     "linkNotion": "b7a5dc33296646ffa955e3e23d3ee8f9",
     "new": "2.0"
   },
@@ -780,6 +828,7 @@
     "other": "",
     "examples": "month(parseDate(\"2023-07-10T17:35Z\"))\n/* => 7 */",
     "exampleBasic": "month(parseDate(\"2023-07-10T17:35Z\"))",
+    "exampleBasicDot": "",
     "linkNotion": "a98c49d3adb543f5a0be67bb56497c14",
     "new": ""
   },
@@ -796,6 +845,7 @@
     "other": "",
     "examples": "year(now())\n/* => 2023 */",
     "exampleBasic": "year(now())",
+    "exampleBasicDot": "",
     "linkNotion": "dbc4f5f1d6664153b021cf29fd9a46a2",
     "new": ""
   },
@@ -812,6 +862,7 @@
     "other": "",
     "examples": "dateAdd(now(), 1, \"days\")\n/* => September 8, 2023 10:00 AM */",
     "exampleBasic": "dateAdd(now(), 1, \"days\")",
+    "exampleBasicDot": "",
     "linkNotion": "b1d9431290584b299449cb20dae82c3a",
     "new": ""
   },
@@ -828,6 +879,7 @@
     "other": "",
     "examples": "dateSubtract(now(), 1, \"days\")\n/* => September 6, 2023 10:00 AM */",
     "exampleBasic": "dateSubtract(now(), 1, \"days\")",
+    "exampleBasicDot": "",
     "linkNotion": "08bdb709cd4846ff8454aa974cbf9967",
     "new": ""
   },
@@ -844,6 +896,7 @@
     "other": "",
     "examples": "dateBetween(now(), parseDate(\"2022-09-07\"), \"days\")\n/* => 366 */",
     "exampleBasic": "dateBetween(now(), parseDate(\"2022-09-07\"), \"days\")",
+    "exampleBasicDot": "",
     "linkNotion": "9e55e2c77f4241e1b109586502b21403",
     "new": ""
   },
@@ -860,6 +913,7 @@
     "other": "",
     "examples": "dateRange(prop(\"Start Date\"), prop(\"End Date\"))\n/* => September 7, 2023 10:00 AM → September 8, 2023 10:00 AM */",
     "exampleBasic": "dateRange(prop(\"Start Date\"), prop(\"End Date\"))",
+    "exampleBasicDot": "",
     "linkNotion": "ec898372a00248ea81e1ebfe310b7f1f",
     "new": "2.0"
   },
@@ -876,6 +930,7 @@
     "other": "",
     "examples": "dateStart(prop(\"Date\"))\n/* => September 7, 2023 10:00 AM */",
     "exampleBasic": "dateStart(prop(\"Date\"))",
+    "exampleBasicDot": "",
     "linkNotion": "439873f0efac40baae19128ee9285845",
     "new": ""
   },
@@ -892,6 +947,7 @@
     "other": "",
     "examples": "dateEnd(prop(\"Date\"))\n/* => September 8, 2023 10:00 AM */",
     "exampleBasic": "dateEnd(prop(\"Date\"))",
+    "exampleBasicDot": "",
     "linkNotion": "f8c6e424c11245d0aa8c79efc85ecb14",
     "new": ""
   },
@@ -908,6 +964,7 @@
     "other": "",
     "examples": "timestamp(now())\n/* => 1694077200000 */",
     "exampleBasic": "timestamp(now())",
+    "exampleBasicDot": "",
     "linkNotion": "0b19a62337a440f9955d8884dc02c9fb",
     "new": ""
   },
@@ -924,6 +981,7 @@
     "other": "",
     "examples": "fromTimestamp(1694077200000)\n/* => September 7, 2023 10:00 AM */",
     "exampleBasic": "fromTimestamp(1694077200000)",
+    "exampleBasicDot": "",
     "linkNotion": "c6e4f150824340b7b67f63a35d9f4eb7",
     "new": ""
   },
@@ -940,6 +998,7 @@
     "other": "",
     "examples": "formatDate(now(), \"MMMM D, Y\")\n/* => \"September 7, 2023\" */",
     "exampleBasic": "formatDate(now(), \"MMMM D, Y\")",
+    "exampleBasicDot": "",
     "linkNotion": "a3c4b6de812743808871026ec3006bf9",
     "new": ""
   },
@@ -956,6 +1015,7 @@
     "other": "",
     "examples": "parseDate(\"2022-01-01\")\n/* => January 1, 2022 */",
     "exampleBasic": "parseDate(\"2022-01-01\")",
+    "exampleBasicDot": "",
     "linkNotion": "f23dc9ecd2f94fa59ea7d0cf6b52a305",
     "new": "2.0"
   },
@@ -972,6 +1032,7 @@
     "other": "",
     "examples": "name(prop(\"Created By\"))\n/* => \"Ben Smith\" */",
     "exampleBasic": "name(prop(\"Created By\"))",
+    "exampleBasicDot": "",
     "linkNotion": "10c97aba4f7849aa80f19a59dba853ba",
     "new": "2.0"
   },
@@ -988,6 +1049,7 @@
     "other": "",
     "examples": "email(prop(\"Created By\"))\n/* => \"ben@bensomething.com\" */",
     "exampleBasic": "email(prop(\"Created By\"))",
+    "exampleBasicDot": "",
     "linkNotion": "1d3079287541467aa791dde1f2036278",
     "new": "2.0"
   },
@@ -1004,6 +1066,7 @@
     "other": "",
     "examples": "at([1, 2, 3], 1)\n/* => 2 */",
     "exampleBasic": "at([1, 2, 3], 1)",
+    "exampleBasicDot": "",
     "linkNotion": "31f1a595d8004a81a4b1a465d20948bc",
     "new": "2.0"
   },
@@ -1020,6 +1083,7 @@
     "other": "",
     "examples": "first([1, 2, 3])\n/* => 1 */",
     "exampleBasic": "first([1, 2, 3])",
+    "exampleBasicDot": "",
     "linkNotion": "9c1bd36a5db64b6da5f1da0d00a20a7b",
     "new": "2.0"
   },
@@ -1036,6 +1100,7 @@
     "other": "",
     "examples": "last([1, 2, 3])\n/* => 3 */",
     "exampleBasic": "last([1, 2, 3])",
+    "exampleBasicDot": "",
     "linkNotion": "cdd48e30c48c4c9790cf11b0544aba26",
     "new": "2.0"
   },
@@ -1052,6 +1117,7 @@
     "other": "",
     "examples": "slice([1, 2, 3], 1, 2)\n/* => [2] */",
     "exampleBasic": "slice([1, 2, 3], 1, 2)",
+    "exampleBasicDot": "",
     "linkNotion": "f6ce9404ffef43dca85ac676c1e637bf",
     "new": ""
   },
@@ -1068,6 +1134,7 @@
     "other": "",
     "examples": "concat([1, 2], [3, 4])\n/* => [1, 2, 3, 4] */",
     "exampleBasic": "concat([1, 2], [3, 4])",
+    "exampleBasicDot": "",
     "linkNotion": "73ecd1986b2f4992b2e1fb2f037520fa",
     "new": ""
   },
@@ -1084,6 +1151,7 @@
     "other": "",
     "examples": "sort([3, 1, 2])\n/* => [1, 2, 3] */",
     "exampleBasic": "sort([3, 1, 2])",
+    "exampleBasicDot": "",
     "linkNotion": "ec4470887ab54fbe9aaaa5204bc5725f",
     "new": "2.0"
   },
@@ -1100,6 +1168,7 @@
     "other": "",
     "examples": "reverse([\"green\", \"eggs\", \"ham\"])\n/* => [\"ham\", \"eggs\", \"green\"] */",
     "exampleBasic": "reverse([\"green\", \"eggs\", \"ham\"])",
+    "exampleBasicDot": "",
     "linkNotion": "b2a457992a82492186a7392ba83b73d0",
     "new": "2.0"
   },
@@ -1116,6 +1185,7 @@
     "other": "",
     "examples": "join([\"a\", \"b\", \"c\"], \", \")\n/* => \"a, b, c\" */",
     "exampleBasic": "join([\"a\", \"b\", \"c\"], \", \")",
+    "exampleBasicDot": "",
     "linkNotion": "60596240d869418c9fc2f48cc54e8a09",
     "new": ""
   },
@@ -1132,6 +1202,7 @@
     "other": "",
     "examples": "split(\"apple,pear,orange\", \",\")\n/* => [\"apple\", \"pear\", \"orange\"] */",
     "exampleBasic": "split(\"apple,pear,orange\", \",\")",
+    "exampleBasicDot": "",
     "linkNotion": "d8a4c14e34854661ae57e6be41289586",
     "new": "2.0"
   },
@@ -1148,6 +1219,7 @@
     "other": "",
     "examples": "unique([1, 1, 2])\n/* => [1, 2] */",
     "exampleBasic": "unique([1, 1, 2])",
+    "exampleBasicDot": "",
     "linkNotion": "f1ffa5dc67364644bda07207b8e3cbf7",
     "new": "2.0"
   },
@@ -1164,6 +1236,7 @@
     "other": "",
     "examples": "includes([\"a\", \"b\", \"c\"], \"b\")\n/* => true */",
     "exampleBasic": "includes([\"a\", \"b\", \"c\"], \"b\")",
+    "exampleBasicDot": "",
     "linkNotion": "f33a23c3c568476d810dc22937e00c3f",
     "new": "2.0"
   },
@@ -1180,6 +1253,7 @@
     "other": "",
     "examples": "find([\"a\", \"b\", \"c\"], current == \"b\")\n/* => \"b\" */",
     "exampleBasic": "find([\"a\", \"b\", \"c\"], current == \"b\")",
+    "exampleBasicDot": "",
     "linkNotion": "4f64346ec72e4367a371d18d6032fe0c",
     "new": "2.0"
   },
@@ -1196,6 +1270,7 @@
     "other": "",
     "examples": "findIndex([\"a\", \"b\", \"c\"], current == \"b\")\n/* => 1 */",
     "exampleBasic": "findIndex([\"a\", \"b\", \"c\"], current == \"b\")",
+    "exampleBasicDot": "",
     "linkNotion": "3c14e43708124e7c975913b05ac37c36",
     "new": "2.0"
   },
@@ -1212,6 +1287,7 @@
     "other": "",
     "examples": "filter([1, 2, 3], current > 1)\n/* => [2, 3] */",
     "exampleBasic": "filter([1, 2, 3], current > 1)",
+    "exampleBasicDot": "",
     "linkNotion": "3a0a85a01c504706a28b0b3ee6ede32c",
     "new": "2.0"
   },
@@ -1228,6 +1304,7 @@
     "other": "",
     "examples": "some([1, 2, 3], current == 2)\n/* => true */",
     "exampleBasic": "some([1, 2, 3], current == 2)",
+    "exampleBasicDot": "",
     "linkNotion": "2594eac097c04d40b8a7a362d31afca4",
     "new": "2.0"
   },
@@ -1244,6 +1321,7 @@
     "other": "",
     "examples": "every([1, 2, 3], current > 0)\n/* => true */",
     "exampleBasic": "every([1, 2, 3], current > 0)",
+    "exampleBasicDot": "",
     "linkNotion": "ae07d42736554a3798921df49b1c3832",
     "new": "2.0"
   },
@@ -1260,6 +1338,7 @@
     "other": "",
     "examples": "map([1, 2, 3], current + 1)\n/* => [2, 3, 4] */",
     "exampleBasic": "map([1, 2, 3], current + 1)",
+    "exampleBasicDot": "",
     "linkNotion": "bff04b8862764423af84a3633954361d",
     "new": "2.0"
   },
@@ -1276,6 +1355,7 @@
     "other": "",
     "examples": "flat([[1, 2], [3, 4]])\n/* => [1, 2, 3, 4] */",
     "exampleBasic": "flat([[1, 2], [3, 4]])",
+    "exampleBasicDot": "",
     "linkNotion": "00c44153e5cf41eeb4fbcd23b57a95cc",
     "new": "2.0"
   },
@@ -1292,6 +1372,7 @@
     "other": "",
     "examples": "id()\n/* => \"229bf7c60d39452f9a460e8b853f6b7e\" */",
     "exampleBasic": "id()",
+    "exampleBasicDot": "",
     "linkNotion": "dc5a4ef1490443a6befb2d23a915e160",
     "new": ""
   },
@@ -1308,6 +1389,7 @@
     "other": "",
     "examples": "equal(1, 1)\n/* => true */",
     "exampleBasic": "equal(1, 1)",
+    "exampleBasicDot": "",
     "linkNotion": "18368d160edb4b5cb63aa38032978cc5",
     "new": ""
   },
@@ -1324,6 +1406,7 @@
     "other": "",
     "examples": "unequal(1, 2)\n/* => true */",
     "exampleBasic": "unequal(1, 2)",
+    "exampleBasicDot": "",
     "linkNotion": "6c16c37a91b74a7d8f02a6c016b02e38",
     "new": ""
   },
@@ -1340,6 +1423,7 @@
     "other": "",
     "examples": "let(person, \"Doug Engelbart\", \"Hello, \" + name + \"!\")\n/* => \"Hello, Doug Engelbart!\" */",
     "exampleBasic": "let(person, \"Doug Engelbart\", \"Hello, \" + name + \"!\")",
+    "exampleBasicDot": "",
     "linkNotion": "ba4d79eb4a0d43279b0803c3b5eb066e",
     "new": "2.0"
   },
@@ -1356,6 +1440,7 @@
     "other": "",
     "examples": "lets(a, \"Hello\", b, \"world\", a + \" \" + b)\n/* => \"Hello world\" */",
     "exampleBasic": "lets(a, \"Hello\", b, \"world\", a + \" \" + b)",
+    "exampleBasicDot": "",
     "linkNotion": "724810275d0c4c5ebed711c824342774",
     "new": "2.0"
   },
@@ -1372,6 +1457,7 @@
     "other": "add",
     "examples": "3 + 2\n/* => 5 */",
     "exampleBasic": "3 + 2",
+    "exampleBasicDot": "",
     "linkNotion": "b3c88538fc204d848f3aa2a433606257",
     "new": ""
   },
@@ -1388,6 +1474,7 @@
     "other": "subtract",
     "examples": "3 - 2\n/* => 1 */",
     "exampleBasic": "3 - 2",
+    "exampleBasicDot": "",
     "linkNotion": "3b068e8814a04cfa887d8f4029c29f50",
     "new": ""
   },
@@ -1404,6 +1491,7 @@
     "other": "multiply",
     "examples": "3 * 2\n/* => 6 */",
     "exampleBasic": "3 * 2",
+    "exampleBasicDot": "",
     "linkNotion": "232fda48c6e34224b2c027ade4b5772c",
     "new": ""
   },
@@ -1420,6 +1508,7 @@
     "other": "mod",
     "examples": "5 % 10\n/* => 5 */",
     "exampleBasic": "5 % 10",
+    "exampleBasicDot": "",
     "linkNotion": "8d83fb5f44d744b5b4a045a3ac502961",
     "new": ""
   },
@@ -1436,6 +1525,7 @@
     "other": "pow",
     "examples": "5 ^ 10\n/* => 9765625 */",
     "exampleBasic": "5 ^ 10",
+    "exampleBasicDot": "",
     "linkNotion": "a7e3772c2e714b27aa7c8391b32c8adf",
     "new": ""
   },
@@ -1452,6 +1542,7 @@
     "other": "divide",
     "examples": "3 / 2\n/* => 1.5 */",
     "exampleBasic": "3 / 2",
+    "exampleBasicDot": "",
     "linkNotion": "fd20f9547ba841e89d11eded7b9afeb0",
     "new": ""
   },
@@ -1468,6 +1559,7 @@
     "other": "equal",
     "examples": "3 == 2\n/* => false */",
     "exampleBasic": "3 == 2",
+    "exampleBasicDot": "",
     "linkNotion": "18368d160edb4b5cb63aa38032978cc5",
     "new": ""
   },
@@ -1484,6 +1576,7 @@
     "other": "unequal",
     "examples": "3 != 2\n/* => true */",
     "exampleBasic": "3 != 2",
+    "exampleBasicDot": "",
     "linkNotion": "6c16c37a91b74a7d8f02a6c016b02e38",
     "new": ""
   },
@@ -1500,6 +1593,7 @@
     "other": "Greater than",
     "examples": "3 > 2\n/* => true */",
     "exampleBasic": "3 > 2",
+    "exampleBasicDot": "",
     "linkNotion": "fe3d9af24103474f91de12a6a0af5ccb",
     "new": ""
   },
@@ -1516,6 +1610,7 @@
     "other": "Greater than or equal to",
     "examples": "3 >= 2\n/* => true */",
     "exampleBasic": "3 >= 2",
+    "exampleBasicDot": "",
     "linkNotion": "a5831360c7474b5f98bfdf9d224ec374",
     "new": ""
   },
@@ -1532,6 +1627,7 @@
     "other": "Less than",
     "examples": "3 < 2\n/* => false */",
     "exampleBasic": "3 < 2",
+    "exampleBasicDot": "",
     "linkNotion": "1d98413359264d2298573c25ce7cbe2f",
     "new": ""
   },
@@ -1548,6 +1644,7 @@
     "other": "Less than or equal to",
     "examples": "3 <= 2\n/* => false */",
     "exampleBasic": "3 <= 2",
+    "exampleBasicDot": "",
     "linkNotion": "696d677f892344cebc0993d0e2b1181f",
     "new": ""
   },
@@ -1564,6 +1661,7 @@
     "other": "and",
     "examples": "true and false\n/* => false */",
     "exampleBasic": "true and false",
+    "exampleBasicDot": "",
     "linkNotion": "05895e0e81004fc68b74e92063e34034",
     "new": ""
   },
@@ -1580,6 +1678,7 @@
     "other": "or",
     "examples": "true or false\n/* => true */",
     "exampleBasic": "true or false",
+    "exampleBasicDot": "",
     "linkNotion": "2dda9a0b9f464d68804b7eb88581731f",
     "new": ""
   },
@@ -1596,6 +1695,7 @@
     "other": "not",
     "examples": "not empty(\"Test\")\n/* => true */",
     "exampleBasic": "not empty(\"Test\")",
+    "exampleBasicDot": "",
     "linkNotion": "b260005fd7db480aaf4e2d7738544483",
     "new": ""
   },
@@ -1612,6 +1712,7 @@
     "other": "if",
     "examples": "true ? 1 : 2\n/* => 1 */",
     "exampleBasic": "true ? 1 : 2",
+    "exampleBasicDot": "",
     "linkNotion": "e3fcf03c5c98451181958ba7eb58214f",
     "new": ""
   },
@@ -1628,6 +1729,7 @@
     "other": "",
     "examples": "true\n/* => true */",
     "exampleBasic": "true",
+    "exampleBasicDot": "",
     "linkNotion": "57af4ed1a4754d05ab1ff88b30a85531",
     "new": ""
   },
@@ -1644,6 +1746,7 @@
     "other": "",
     "examples": "false\n/* => false */",
     "exampleBasic": "false",
+    "exampleBasicDot": "",
     "linkNotion": "61dd24285c264bfe9c714c56ec5180b1",
     "new": ""
   },
@@ -1660,6 +1763,7 @@
     "other": "",
     "examples": "map([1, 2, 3], current + 1)\n/* => [2, 3, 4] */",
     "exampleBasic": "map([1, 2, 3], current + 1)",
+    "exampleBasicDot": "",
     "linkNotion": "27ff4364e6ac4abfb2b79c30d1d50e6b",
     "new": ""
   },
@@ -1676,6 +1780,7 @@
     "other": "",
     "examples": "map([1, 2, 3], current + index)\n/* => [1, 3, 5] */",
     "exampleBasic": "map([1, 2, 3], current + index)",
+    "exampleBasicDot": "",
     "linkNotion": "1febc6abe7024b9caf02ee12aa87ed8a",
     "new": ""
   }

@@ -1,59 +1,113 @@
-import { Form } from "@raycast/api";
+import { Action, ActionPanel, Form, Icon, List, useNavigation } from "@raycast/api";
 import { useState } from "react";
 
+interface Todo {
+  title: string;
+  isCompleted: boolean;
+}
+
 export default function Command() {
-    const [nameError, setNameError] = useState<string | undefined>();
-    const [exampleError, setExampleError] = useState<string | undefined>();
+  const [todos, setTodos] = useState<Todo[]>([
+    { title: "Write a todo list extension", isCompleted: false },
+    { title: "Explain it to others", isCompleted: false },
+  ]);
 
-    function dropNameErrorIfNeeded() {
-      if (nameError && nameError.length > 0) {
-        setNameError(undefined);
-      }
-    }
+  function handleCreate(todo: Todo) {
+    const newTodos = [...todos, todo];
+    setTodos(newTodos);
+  }
 
-    function dropExampleErrorIfNeeded() {
-      if (exampleError && exampleError.length > 0) {
-        setNameError(undefined);
-      }
-    }
+  function handleToggle(index: number) {
+    const newTodos = [...todos];
+    newTodos[index].isCompleted = !newTodos[index].isCompleted;
+    setTodos(newTodos);
+  }
+
+  function handleDelete(index: number) {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+  }
 
   return (
-    <Form>
-      <Form.TextField
-        id="nameField"
-        title="Title"
-        error={nameError}
-        onChange={dropNameErrorIfNeeded}
-        onBlur={(event) => {
-          if (event.target.value?.length == 0) {
-            setNameError("Title is required");
-          } else {
-            dropNameErrorIfNeeded();
+    <List
+      actions={
+        <ActionPanel>
+          <CreateTodoAction onCreate={handleCreate} />
+        </ActionPanel>
+      }
+    >
+      {todos.map((todo, index) => (
+        <List.Item
+          key={index}
+          icon={todo.isCompleted ? Icon.Checkmark : Icon.Circle}
+          title={todo.title}
+          actions={
+            <ActionPanel>
+              <ActionPanel.Section>
+                <ToggleTodoAction todo={todo} onToggle={() => handleToggle(index)} />
+              </ActionPanel.Section>
+              <ActionPanel.Section>
+                <CreateTodoAction onCreate={handleCreate} />
+                <DeleteTodoAction onDelete={() => handleDelete(index)} />
+              </ActionPanel.Section>
+            </ActionPanel>
           }
-        }}
-      />
-      <Form.TextArea 
-        id="example" 
-        title="Example"
-        error={exampleError}
-        onChange={dropExampleErrorIfNeeded}
-        onBlur={(event) => {
-          if (event.target.value?.length == 0) {
-            setExampleError("An example is required");
-          } else {
-            dropExampleErrorIfNeeded();
-          }
-        }}
         />
-      <Form.TagPicker id="components" title="Components">
-        <Form.TagPicker.Item value="if" title="if" icon="various.svg" />
-        <Form.TagPicker.Item value="ifs" title="ifs" icon="various.svg" />
-        <Form.TagPicker.Item value="and" title="and" icon="boolean.svg" />
-      </Form.TagPicker>
+      ))}
+    </List>
+  );
+}
+
+function CreateTodoForm(props: { onCreate: (todo: Todo) => void }) {
+  const { pop } = useNavigation();
+
+  function handleSubmit(values: { title: string }) {
+    props.onCreate({ title: values.title, isCompleted: false });
+    pop();
+  }
+
+  return (
+    <Form
+      actions={
+        <ActionPanel>
+          <Action.SubmitForm title="Create Todo" onSubmit={handleSubmit} />
+        </ActionPanel>
+      }
+    >
+      <Form.TextField id="title" title="Title" />
     </Form>
   );
 }
 
-function validatePassword(value: string): boolean {
-  return value.length >= 8;
+function CreateTodoAction(props: { onCreate: (todo: Todo) => void }) {
+  return (
+    <Action.Push
+      icon={Icon.Pencil}
+      title="Create Todo"
+      shortcut={{ modifiers: ["cmd"], key: "n" }}
+      target={<CreateTodoForm onCreate={props.onCreate} />}
+    />
+  );
+}
+
+function ToggleTodoAction(props: { todo: Todo; onToggle: () => void }) {
+  return (
+    <Action
+      icon={props.todo.isCompleted ? Icon.Circle : Icon.Checkmark}
+      title={props.todo.isCompleted ? "Uncomplete Todo" : "Complete Todo"}
+      onAction={props.onToggle}
+    />
+  );
+}
+
+function DeleteTodoAction(props: { onDelete: () => void }) {
+  return (
+    <Action
+      icon={Icon.Trash}
+      title="Delete Todo"
+      shortcut={{ modifiers: ["ctrl"], key: "x" }}
+      onAction={props.onDelete}
+    />
+  );
 }

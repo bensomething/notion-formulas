@@ -1,8 +1,8 @@
-import { Action, ActionPanel, List, Detail, Color } from "@raycast/api";
+import { Action, ActionPanel, List, Detail, Color, getPreferenceValues, launchCommand, LaunchType } from "@raycast/api";
 import { useMemo, useState, useEffect } from "react";
 import axios from 'axios';
 import groupBy from "lodash.groupby";
-import TypeDropdown from "./components/type_dropdown";
+import TypeDropdown from "./components/TypeDropdown";
 import LocalFormulas from './data/formulas.json';
 /* import FormulaDetail from "./components/detail"; */
 
@@ -19,19 +19,28 @@ interface Formula {
   other: string;
   examples: string;
   exampleBasic: string;
+  exampleBasicDot: string;
   linkNotion: string;
   new: string;
 }
 
+interface Preferences {
+  new: boolean;
+  notation: string;
+}
+
 let cache: Formula[] | null = null;
 
+
 export default function SearchFormulas() {
+  const preferences = getPreferenceValues<Preferences>();
   const [formulas, setFormulas] = useState<Formula[]>([]);
   const [isInitialLoad, setIsInitialLoad] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [showingDetail, setShowingDetail] = useState(true);
   /* const [searchText, setSearchText] = useState(""); */
   const [type, setType] = useState<string>("all");
+
   useEffect(() => {
     const fetchData = async () => {
       setIsInitialLoad(true);
@@ -43,7 +52,7 @@ export default function SearchFormulas() {
         if (process.env.NODE_ENV === 'development') {
           data = LocalFormulas
         } else {
-          const response = await axios.get('https://raw.githubusercontent.com/bensomething/formulas/main/formulas.json');
+          const response = await axios.get('https://raw.githubusercontent.com/bensomething/notion-formulas/main/src/data/formulas.json');
           data = response.data;
         }
 
@@ -136,18 +145,19 @@ export default function SearchFormulas() {
                     actions={
                       <ActionPanel>
                         { formula.exampleBasic && (
-                          <Action.Paste icon="paste.svg" title="Paste Example" content={formula.exampleBasic} />
+                          <Action.Paste icon={{ source: "paste.svg", tintColor: { light: Color.Magenta, dark: Color.Magenta }, }} title="Paste Basic Example" content={preferences.notation === "regular" ? formula.exampleBasic : formula.exampleBasicDot} />
                         )}
                         {/* <Action.ToggleQuickLook shortcut={{ modifiers: ["cmd"], key: "y" }} />
                          <Action.Push icon="detail.svg" title="Open Detail" target={<FormulaDetail id={formula.id} />} /> */}
+                         <Action icon={{ source: "examples.svg", tintColor: { light: Color.SecondaryText, dark: Color.SecondaryText }, }} title={`Search '${formula.name}' Examples`} onAction={() => launchCommand({ name: "examples", type: LaunchType.UserInitiated, context: { exampleSearch: formula.name } }) } shortcut={{ modifiers: ["cmd"], key: "e" }} />
                         { formula.linkNotion && (
-                          <Action.OpenInBrowser icon="browser.svg" title={`More in Browser`} /* shortcut={{ modifiers: ["cmd"], key: "o" }} */ url={`https://bensomething.notion.site/${formula.linkNotion}`} />
+                          <Action.OpenInBrowser icon={{ source: "browser.svg", tintColor: { light: Color.Orange, dark: Color.Orange }, }} title={`More in Browser`} shortcut={{ modifiers: ["cmd"], key: "o" }} url={`https://bensomething.notion.site/${formula.linkNotion}`} />
                         )}
                       </ActionPanel>
                     }
                     accessories={[
                       { text: formula.other, tooltip:formula.other.includes("G") || formula.other.includes("L") ? "" : formula.type == 'Functions' ? "Operator version" : "Function version"},
-                      { text: formula.new ? { color: Color.Yellow, value: '•' } : "", tooltip:"New in 2.0"}
+                      preferences.new ? { text: formula.new ? { color: Color.Yellow, value: '•' } : "", tooltip:"New in 2.0"} : {}
                     ]}
                   />
                 );
