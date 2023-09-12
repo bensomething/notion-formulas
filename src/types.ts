@@ -5,6 +5,7 @@ interface Example {
   categories: string[];
   formulas: string[];
   lastEdited: string;
+  pinned: boolean;
 }
 
 export type { Example };

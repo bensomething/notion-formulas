@@ -7,6 +7,7 @@ import {
   getPreferenceValues,
   launchCommand,
   LaunchType,
+  environment,
 } from "@raycast/api";
 import { useMemo, useState, useEffect } from "react";
 import axios from "axios";
@@ -38,6 +39,10 @@ interface Preferences {
   notation: string;
 }
 
+type State = {
+  searchText: string;
+};
+
 let cache: Formula[] | null = null;
 
 export default function SearchFormulas() {
@@ -46,8 +51,11 @@ export default function SearchFormulas() {
   const [isInitialLoad, setIsInitialLoad] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [showingDetail, setShowingDetail] = useState(true);
-  /* const [searchText, setSearchText] = useState(""); */
   const [type, setType] = useState<string>("all");
+
+  const [searchText, setSearchText] = useState<string>(
+    environment.launchContext ? environment.launchContext.formulasSearch : "",
+  );
 
   useEffect(() => {
     const fetchData = async () => {
@@ -80,10 +88,20 @@ export default function SearchFormulas() {
   }, []);
 
   const groupedListing = useMemo(() => {
-    const list =
+    let list =
       type !== "all" ? formulas.filter((p) => p.type.includes(type)) : formulas;
+
+    if (searchText !== "") {
+      list = list.filter(
+        (p) =>
+          p.name.toLowerCase().includes(searchText.toLowerCase()) ||
+          p.other.toLowerCase().includes(searchText.toLowerCase()) ||
+          p.category.toLowerCase().includes(searchText.toLowerCase()),
+      );
+    }
+
     return groupBy(list, type !== "all" ? "category" : "type");
-  }, [type, formulas]);
+  }, [type, formulas, searchText]);
 
   if (Object.keys(groupedListing).length === 0 && !isInitialLoad) {
     return (
@@ -103,16 +121,12 @@ export default function SearchFormulas() {
       searchBarAccessory={
         <TypeDropdown type="list" command="Formulas" onSelectType={setType} />
       }
-      /* onSearchTextChange={setSearchText} */
+      searchText={searchText}
+      onSearchTextChange={setSearchText}
     >
       {Object.entries(groupedListing).map(([key, formulaList]) => {
         return (
-          <List.Section
-            title={key}
-            /* subtitle={`${searchText ? '' : ` ${formulaList.length}`}`} */ key={
-              key
-            }
-          >
+          <List.Section title={key} key={key}>
             {formulaList.map((formula) => {
               return (
                 <List.Item
@@ -135,7 +149,6 @@ export default function SearchFormulas() {
                     formula.category,
                     key,
                   ]}
-                  /* quickLook={{ path: `${formula.name}.txt`, name: `${formula.name}` }} */
                   detail={
                     <List.Item.Detail
                       markdown={
@@ -246,7 +259,7 @@ export default function SearchFormulas() {
                             context: { exampleSearch: formula.name },
                           })
                         }
-                        shortcut={{ modifiers: ["cmd"], key: "e" }}
+                        shortcut={{ modifiers: ["cmd"], key: "i" }}
                       />
                       {formula.linkNotion && (
                         <Action.OpenInBrowser

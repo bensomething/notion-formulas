@@ -17,7 +17,7 @@ function EmptyView(props: {
       <List.EmptyView
         icon="file-x.svg"
         title="No matching examples found"
-        description={`Can't find an example matching \\"${props.searchText}\\". Press Enter to create a new example!`}
+        description={`Can't find any examples using "${props.searchText}". Press Enter to create a new example!`}
         actions={
           <ActionPanel>
             <CreateExampleAction

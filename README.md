@@ -1,12 +1,19 @@
 # Notion Formulas
 
-Search documentation and create reusable examples for Notion's new formulas.
+Learn about Notion's new formulas through extensive documentation, and create reusable examples.
 
 ## To Do
 
-- [ ] Group examples by category
-- [ ] Save examples to support directory
-- [ ] Option for selecting a directory of existing examples
-- [ ] Add option for preferred example action: Paste or Copy 
+### General
 
-## Credits
+- [ ] Add option for preferred example action: Paste or Copy.
+
+### Documentation
+
+- [ ] Expanded detail view for documentation with additional information about how each formula component works.
+
+### Examples
+
+- [ ] Save examples to support directory.
+- [ ] Setting for selecting a directory of existing examples.
+- [ ] Setting for toggling a default set of examples.

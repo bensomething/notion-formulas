@@ -153,7 +153,7 @@
     "new": ""
   },
   {
-    "name": "match ",
+    "name": "match",
     "id": 10,
     "type": "Functions",
     "description": "Returns all matches of the regular expression as a list.",
@@ -204,7 +204,7 @@
     "new": ""
   },
   {
-    "name": "lower ",
+    "name": "lower",
     "id": 13,
     "type": "Functions",
     "description": "Converts the text to lowercase.",
@@ -221,7 +221,7 @@
     "new": "2.0"
   },
   {
-    "name": "upper ",
+    "name": "upper",
     "id": 14,
     "type": "Functions",
     "description": "Converts the text to uppercase.",
@@ -255,7 +255,7 @@
     "new": "2.0"
   },
   {
-    "name": "link ",
+    "name": "link",
     "id": 16,
     "type": "Functions",
     "description": "Creates a hyperlink from the label text and the URL.",
@@ -289,7 +289,7 @@
     "new": "2.0"
   },
   {
-    "name": "unstyle ",
+    "name": "unstyle",
     "id": 18,
     "type": "Functions",
     "description": "Removes formatting styles from the text. If no styles are specified, all styles are removed.",
@@ -459,7 +459,7 @@
     "new": ""
   },
   {
-    "name": "sum ",
+    "name": "sum",
     "id": 28,
     "type": "Functions",
     "description": "Returns the sum of its arguments.",
@@ -799,7 +799,7 @@
     "new": ""
   },
   {
-    "name": "week ",
+    "name": "week",
     "id": 48,
     "type": "Functions",
     "description": "Returns the ISO week of the year of the date (1-53).",
@@ -1003,7 +1003,7 @@
     "new": ""
   },
   {
-    "name": "parseDate ",
+    "name": "parseDate",
     "id": 60,
     "type": "Functions",
     "description": "Returns the date parsed according to the ISO 8601 standard.",
@@ -1020,7 +1020,7 @@
     "new": "2.0"
   },
   {
-    "name": "name ",
+    "name": "name",
     "id": 61,
     "type": "Functions",
     "description": "Returns the name of a person.",
@@ -1037,7 +1037,7 @@
     "new": "2.0"
   },
   {
-    "name": "email ",
+    "name": "email",
     "id": 62,
     "type": "Functions",
     "description": "Returns the email address of a person.",
@@ -1190,7 +1190,7 @@
     "new": ""
   },
   {
-    "name": "split ",
+    "name": "split",
     "id": 71,
     "type": "Functions",
     "description": "Returns the list of values created by splitting a text by a separator.",
@@ -1224,7 +1224,7 @@
     "new": "2.0"
   },
   {
-    "name": "includes ",
+    "name": "includes",
     "id": 73,
     "type": "Functions",
     "description": "Returns true if the list contains the specified value, and false otherwise.",
@@ -1258,7 +1258,7 @@
     "new": "2.0"
   },
   {
-    "name": "findIndex ",
+    "name": "findIndex",
     "id": 75,
     "type": "Functions",
     "description": "Returns the index of the first item in the list for which the condition evaluates to true.",
@@ -1292,7 +1292,7 @@
     "new": "2.0"
   },
   {
-    "name": "some ",
+    "name": "some",
     "id": 77,
     "type": "Functions",
     "description": "Returns true if any item in the list satisfies the given condition, and false otherwise.",
