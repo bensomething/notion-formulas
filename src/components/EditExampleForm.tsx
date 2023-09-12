@@ -5,6 +5,7 @@ import {
   ActionPanel,
   useNavigation,
   clearSearchBar,
+  Color,
 } from "@raycast/api";
 import formulas from "../data/formulas.json";
 
@@ -56,21 +57,35 @@ function EditExampleForm(props: {
     <Form
       actions={
         <ActionPanel>
-          <Action.SubmitForm title="Update Example" onSubmit={handleSubmit} />
+          <Action.SubmitForm
+            title="Update Example"
+            onSubmit={handleSubmit}
+            icon={{
+              source: "update.svg",
+              tintColor: { light: Color.Green, dark: Color.Green },
+            }}
+          />
         </ActionPanel>
       }
     >
-      <Form.TextField id="title" defaultValue={defaultTitle} title="Title" />
+      <Form.TextField
+        id="title"
+        defaultValue={defaultTitle}
+        placeholder="New Example"
+        title="Title"
+      />
       <Form.TextArea
         id="example"
         defaultValue={defaultExample}
         title="Example"
+        placeholder="if(..."
       />
       <Form.Separator />
       <Form.TagPicker
         id="categories"
         title="Categories"
         defaultValue={defaultCategories}
+        placeholder="Add categories..."
       >
         {formulas.map((category) => (
           <Form.TagPicker.Item

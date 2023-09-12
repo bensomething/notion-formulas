@@ -158,13 +158,17 @@ export default function Command() {
   function groupByCategory(examples: Example[]) {
     return examples.reduce(
       (grouped, example) => {
-        example.categories.forEach((category) => {
+        const categoryList =
+          example.categories.length > 0 ? example.categories : ["No Category"];
+
+        categoryList.forEach((category) => {
           if (grouped[category]) {
             grouped[category].push(example);
           } else {
             grouped[category] = [example];
           }
         });
+
         return grouped;
       },
       {} as Record<string, Example[]>,
