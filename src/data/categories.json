@@ -1,14 +1,14 @@
 [
-    {
-        "name": "Strings",
-        "id": "strings"
-    },
-    {
-        "name": "Numbers",
-        "id": "numbers"
-    },
-    {
-        "name": "Dates",
-        "id": "dates"
-    }
+  {
+    "name": "Strings",
+    "id": "strings"
+  },
+  {
+    "name": "Numbers",
+    "id": "numbers"
+  },
+  {
+    "name": "Dates",
+    "id": "dates"
+  }
 ]

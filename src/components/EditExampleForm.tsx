@@ -1,17 +1,55 @@
 import { useCallback } from "react";
-import { Form, Action, ActionPanel, useNavigation } from "@raycast/api";
-import categories from "../data/formulas.json";
+import {
+  Form,
+  Action,
+  ActionPanel,
+  useNavigation,
+  clearSearchBar,
+} from "@raycast/api";
+import formulas from "../data/formulas.json";
 
-function EditExampleForm(props: { defaultTitle?: string; defaultExample?: string; defaultCategories?: string[]; onEdit: (title: string, example: string, categories: string[]) => void }) {
-  const { onEdit, defaultTitle = "", defaultExample = "", defaultCategories = [] } = props;
+function EditExampleForm(props: {
+  id: string;
+  defaultTitle?: string;
+  defaultExample?: string;
+  defaultCategories?: string[];
+  defaultFormulas?: string[];
+  onEdit: (
+    id: string,
+    title: string,
+    example: string,
+    categories: string[],
+    formulas: string[],
+  ) => void;
+}) {
+  const {
+    id,
+    onEdit,
+    defaultTitle = "",
+    defaultExample = "",
+    defaultCategories = [],
+    defaultFormulas = [],
+  } = props;
   const { pop } = useNavigation();
 
   const handleSubmit = useCallback(
-    (values: { title: string, example: string, categories: string[] }) => {
-      onEdit(values.title, values.example, values.categories);
+    (values: {
+      title: string;
+      example: string;
+      categories: string[];
+      formulas: string[];
+    }) => {
+      onEdit(
+        id,
+        values.title,
+        values.example,
+        values.categories,
+        values.formulas,
+      );
+      clearSearchBar();
       pop();
     },
-    [onEdit, pop]
+    [id, onEdit, pop],
   );
 
   return (
@@ -23,10 +61,47 @@ function EditExampleForm(props: { defaultTitle?: string; defaultExample?: string
       }
     >
       <Form.TextField id="title" defaultValue={defaultTitle} title="Title" />
-      <Form.TextArea id="example" defaultValue={defaultExample} title="Example" />
-      <Form.TagPicker id="categories" title="Categories" defaultValue={defaultCategories}>
-        {categories.map((category) => (
-          <Form.TagPicker.Item key={`${category.category.toLowerCase()}-${category.id}`} value={category.category} title={category.category} />
+      <Form.TextArea
+        id="example"
+        defaultValue={defaultExample}
+        title="Example"
+      />
+      <Form.Separator />
+      <Form.TagPicker
+        id="categories"
+        title="Categories"
+        defaultValue={defaultCategories}
+      >
+        {formulas.map((category) => (
+          <Form.TagPicker.Item
+            key={`${category.category.toLowerCase()}-${category.id}`}
+            value={category.category}
+            title={category.category}
+            icon={{
+              source: `categories/${category.category
+                .toLowerCase()
+                .replace(/\s+/g, "-")}.svg`,
+              tintColor: { light: "#aaa", dark: "#888", adjustContrast: false },
+            }}
+          />
+        ))}
+      </Form.TagPicker>
+      <Form.TagPicker
+        id="formulas"
+        title="Components"
+        placeholder="Add components..."
+        defaultValue={defaultFormulas}
+      >
+        {formulas.map((formula) => (
+          <Form.TagPicker.Item
+            key={`${formula.name.toLowerCase()}-${formula.id}`}
+            value={formula.name}
+            title={formula.name}
+            icon={{
+              source: formula.iconReturns,
+              tintColor: { light: "#aaa", dark: "#888" },
+            }}
+          />
         ))}
       </Form.TagPicker>
     </Form>

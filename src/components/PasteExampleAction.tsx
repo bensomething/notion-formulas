@@ -1,7 +1,9 @@
 import { Action, Icon } from "@raycast/api";
-import { Example } from "../types";
 
-function PasteExampleAction(props: { defaultExample?: string; onPaste: (example: string) => void }) {
+function PasteExampleAction(props: {
+  defaultExample?: string;
+  onPaste: (example: string) => void;
+}) {
   return (
     <Action.Paste
       icon="pencil-plus.svg"

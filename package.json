@@ -2,12 +2,12 @@
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "notion-formulas",
   "title": "Notion Formulas",
-  "description": "Documentation and examples for Notion's new formulas.",
+  "description": "Search Notion formula documentation and create reusable examples.",
   "icon": "icon.png",
   "author": "bensomething",
   "license": "MIT",
   "categories": [
-    "Documentation", 
+    "Documentation",
     "Productivity"
   ],
   "commands": [
@@ -35,12 +35,12 @@
       "default": "regular",
       "data": [
         {
-          "title":"Regular: length(\"Notion\")",
-          "value":"regular"
+          "title": "Regular: length(\"Notion\")",
+          "value": "regular"
         },
         {
-          "title":"Dot: \"Notion\".length()",
-          "value":"dot"
+          "title": "Dot: \"Notion\".length()",
+          "value": "dot"
         }
       ],
       "required": false
@@ -54,7 +54,7 @@
       "default": true,
       "required": false
     }
-  ], 
+  ],
   "dependencies": {
     "@raycast/api": "^1.47.2",
     "axios": "^1.3.1",
@@ -71,7 +71,7 @@
     "@typescript-eslint/parser": "^5.50.0",
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",
-    "react-devtools": "^4.27.1",
+    "react-devtools": "^4.24.6",
     "typescript": "^4.9.5"
   },
   "scripts": {

@@ -1,9 +1,6 @@
 import { Grid, List } from "@raycast/api";
 
-const categories = [
-  "Conditional",
-  "Logical",
-];
+const types = ["Functions", "Operators", "Booleans", "Variables"];
 
 export default function TypeDropdown(props: {
   type?: string;
@@ -22,20 +19,36 @@ export default function TypeDropdown(props: {
         key="all"
         value="all"
         title="All Types"
-        icon={{ source: "types/all.svg", tintColor: { light: "#aaa", dark: "#888", adjustContrast:  false, }, }}
+        icon={{
+          source: "types/all.svg",
+          tintColor: { light: "#aaa", dark: "#888", adjustContrast: false },
+        }}
       />
       <DropdownComponent.Section>
-        {categories.map((category) => {
+        {types.map((type) => {
           return (
             <DropdownComponent.Item
-              key={category}
-              value={category}
-              title={category}
-              icon={{ source:`categories/${category.toLowerCase().replace(/ /g, "-")}.svg`, tintColor: { light: "#aaa", dark: "#888", adjustContrast:  false, }, }}
+              key={type}
+              value={type}
+              title={type}
+              icon={{
+                source: `types/${type.toLowerCase().replace(/ /g, "-")}.svg`,
+                tintColor: {
+                  light: "#aaa",
+                  dark: "#888",
+                  adjustContrast: false,
+                },
+              }}
             />
           );
         })}
       </DropdownComponent.Section>
+      {/* <DropdownComponent.Item
+        key="two"
+        value="two"
+        title="New in 2.0"
+        icon={{ source: "types/new-in-2.0.svg", tintColor: { light: "#aaa", dark: "#888", adjustContrast:  false, }, }}
+      /> */}
     </DropdownComponent>
   );
 }

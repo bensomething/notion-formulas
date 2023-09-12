@@ -6,17 +6,20 @@ function DeleteExampleAction(props: { onDelete: () => void }) {
     message: "Be careful — this action can't be undone!",
     primaryAction: {
       title: "Delete Example",
-      style: Alert.ActionStyle.Destructive
+      style: Alert.ActionStyle.Destructive,
     },
   };
   const handleConfirmDelete = async () => {
     if (await confirmAlert(options)) {
       props.onDelete();
     }
-  }
+  };
   return (
     <Action
-      icon={{ source: "trash.svg", tintColor: { light: Color.Red, dark: Color.Red }, }}
+      icon={{
+        source: "trash.svg",
+        tintColor: { light: Color.Red, dark: Color.Red },
+      }}
       title="Delete Example"
       shortcut={{ modifiers: ["ctrl"], key: "x" }}
       onAction={handleConfirmDelete}

@@ -1,11 +1,6 @@
 import { Grid, List } from "@raycast/api";
 
-const types = [
-  "Functions",
-  "Operators",
-  "Booleans",
-  "Variables",
-];
+const types = ["Functions", "Operators", "Booleans", "Variables"];
 
 export default function TypeDropdown(props: {
   type?: string;
@@ -24,7 +19,10 @@ export default function TypeDropdown(props: {
         key="all"
         value="all"
         title="All Types"
-        icon={{ source: "types/all.svg", tintColor: { light: "#aaa", dark: "#888", adjustContrast:  false, }, }}
+        icon={{
+          source: "types/all.svg",
+          tintColor: { light: "#aaa", dark: "#888", adjustContrast: false },
+        }}
       />
       <DropdownComponent.Section>
         {types.map((type) => {
@@ -33,7 +31,14 @@ export default function TypeDropdown(props: {
               key={type}
               value={type}
               title={type}
-              icon={{ source:`types/${type.toLowerCase().replace(/ /g, "-")}.svg`, tintColor: { light: "#aaa", dark: "#888", adjustContrast:  false, }, }}
+              icon={{
+                source: `types/${type.toLowerCase().replace(/ /g, "-")}.svg`,
+                tintColor: {
+                  light: "#aaa",
+                  dark: "#888",
+                  adjustContrast: false,
+                },
+              }}
             />
           );
         })}
